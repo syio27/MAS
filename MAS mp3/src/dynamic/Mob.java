@@ -38,4 +38,12 @@ public abstract class Mob {
         extent.remove(mob);
     }
     public abstract double doDamage();
+
+    @Override
+    public String toString() {
+        return "Mob{" +
+                "hitPoint=" + hitPoint +
+                ", damage=" + damage +
+                '}';
+    }
 }

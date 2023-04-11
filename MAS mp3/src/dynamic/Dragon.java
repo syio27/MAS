@@ -7,14 +7,17 @@ import java.util.Random;
 public class Dragon extends Mob {
 
     private List<String> attackTypes = new ArrayList<>();
+    private int age;
 
-    public Dragon(int hitPoint, double damage, List<String> attackTypes) {
+    public Dragon(int hitPoint, double damage, int age) {
         super(hitPoint, damage);
         setAttackTypes(attackTypes);
+        setAge(age);
     }
-    public Dragon(Mob mob, List<String> attackTypes) {
+    public Dragon(Mob mob, int age) {
         super(mob.getHitPoint(), mob.getDamage());
         setAttackTypes(attackTypes);
+        setAge(age);
     }
 
     private void setAttackTypes(List<String> attackTypes) {
@@ -26,6 +29,17 @@ public class Dragon extends Mob {
 
     public List<String> getAttackTypes() {
         return attackTypes;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        if(age < 0){
+            throw new IllegalArgumentException("Age cannot be less than 0");
+        }
+        this.age = age;
     }
 
     @Override
@@ -44,5 +58,13 @@ public class Dragon extends Mob {
             };
         }
         return totalDamage;
+    }
+
+    @Override
+    public String toString() {
+        return "Dragon{" +
+                "attackTypes=" + attackTypes +
+                ", age=" + age +
+                '}';
     }
 }

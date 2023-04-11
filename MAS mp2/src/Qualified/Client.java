@@ -12,6 +12,7 @@ public class Client {
 
     private final Set<Trip> trips = new HashSet<>();
 
+
     public Client(String firstName, String lastName, String email, String telephone) {
         count_id++;
         setId(count_id);

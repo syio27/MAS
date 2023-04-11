@@ -98,7 +98,8 @@ public class Member implements Military, Scientist, Specialist {
     }
 
     public EnumSet<MemberType> getTypes() {
-        return types; //Sets.immutableEnumSet(types);
+//        return Sets.immutableEnumSet(types);
+        return null;
     }
 
     private void setTypes(EnumSet<MemberType> types) {

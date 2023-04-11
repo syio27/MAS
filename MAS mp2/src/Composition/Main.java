@@ -5,14 +5,7 @@ public class Main {
         Country country = new Country("Kazakhstan");
         Trip trip = new Trip("kz trip", "...........", country);
         System.out.println(country.getTrips());
-//        country.removeTrip(trip);
-
-        System.out.println("trip ext " + Trip.extent);
-        System.out.println("count ext " + Country.extent);
-
-
-        Country.delete(country);
-        System.out.println("trip ext " + Trip.extent);
-        System.out.println("count ext " + Country.extent);
+        country.removeTrip(trip);
+        System.out.println(country.getTrips());
     }
 }

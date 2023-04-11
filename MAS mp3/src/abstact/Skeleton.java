@@ -22,9 +22,9 @@ public class Skeleton extends Mob{
     @Override
     public double doDamage() {
         return switch (weapon) {
-            case Bow -> getDamage();
-            case Sword -> getDamage() * 0.5;
-            case CrossBow -> getDamage() * 2;
+            case BOW -> getDamage();
+            case SWORD -> getDamage() * 0.5;
+            case CROSSBOW -> getDamage() * 2;
         };
     }
 

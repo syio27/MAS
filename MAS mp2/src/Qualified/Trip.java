@@ -53,14 +53,7 @@ public class Trip {
         return id;
     }
 
-    public void setNewId(int newId){
-        int prevId = this.id;
-        this.id = newId;
-        clients.put(id, clients.get(prevId));
-        clients.remove(prevId);
-    }
-
-    private void setId(int id) {
+    public void setId(int id) {
         this.id = id;
     }
 

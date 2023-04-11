@@ -5,8 +5,6 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class Country {
-    public static final Set<Country> extent = new HashSet<>();
-
     private static int count_id = 0;
     private int id;
     private String name;
@@ -17,7 +15,6 @@ public class Country {
         count_id++;
         setId(count_id);
         setName(name);
-        extent.add(this);
     }
 
     public void addTrip(Trip trip) {
@@ -62,13 +59,6 @@ public class Country {
 
     public Set<Trip> getTrips() {
         return Collections.unmodifiableSet(trips);
-    }
-
-    public static void delete(Country country){
-        Set<Trip> tripsTemp = Set.copyOf(country.trips);
-        country.trips.clear();
-        tripsTemp.forEach(Trip::delete);
-        extent.remove(country);
     }
 
     @Override

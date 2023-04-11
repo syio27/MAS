@@ -1,11 +1,6 @@
 package Composition;
 
-import java.util.HashSet;
-import java.util.Set;
-
 public class Trip {
-
-    public static final Set<Trip> extent = new HashSet<>();
 
     private String name;
     private String description;
@@ -16,7 +11,6 @@ public class Trip {
         setName(name);
         setDescription(description);
         country.addTrip(this);
-        extent.add(this);
     }
 
     public String getName() {
@@ -52,10 +46,6 @@ public class Trip {
 
     private void setCountry(Country country) {
         this.country = country;
-    }
-
-    public static void delete(Trip trip){
-        extent.remove(trip);
     }
 
     @Override
